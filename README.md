@@ -1,4 +1,10 @@
-# Skada for Wrath of the Lich King `3.3.5` (_Revisited - v1.8.86_)
+What changed:   
+  - ruRU locale: 
+    - fix for errors on some tooltips
+  - ICC: Valkyrs overkilling finally working, [awesome_wotlk](https://github.com/someweirdhuman/awesome_wotlk) needed
+    - sorry Warmane pals, your devs hate you xD
+
+# Skada for Wrath of the Lich King `3.3.5` (_Revisited - v1.8.87_)
 
 ![Discord](https://img.shields.io/discord/795698054371868743?label=discord)
 ![GitHub last commit](https://img.shields.io/github/last-commit/bkader/Skada-WoTLK)
