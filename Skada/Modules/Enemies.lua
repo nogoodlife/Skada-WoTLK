@@ -85,7 +85,7 @@ Skada:RegisterModule("Enemy Damage Taken", function(L, P, _, C)
 			end
 
 			-- try to grab UnitID
-			local uid = GetUnitIdFromGUID(guid)
+			local uid = C_NamePlate and UnitTokenFromGUID(guid) or GetUnitIdFromGUID(guid)
 			if not uid then return end
 
 			local maxval = UnitPowerMax(uid, unit.power)
@@ -105,8 +105,11 @@ Skada:RegisterModule("Enemy Damage Taken", function(L, P, _, C)
 		end
 
 		-- try to grab UnitID
-		local uid = GetUnitIdFromGUID(guid)
-		if not uid then return end
+		local uid = C_NamePlate and UnitTokenFromGUID(guid) or GetUnitIdFromGUID(guid)
+		if not uid then 
+			--print("skada87 failed to grab unitID")
+			return
+		end
 
 		local maxval = UnitHealthMax(uid)
 		if not maxval then return end
