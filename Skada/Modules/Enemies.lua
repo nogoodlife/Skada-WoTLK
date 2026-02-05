@@ -107,7 +107,7 @@ Skada:RegisterModule("Enemy Damage Taken", function(L, P, _, C)
 		-- try to grab UnitID
 		local uid = C_NamePlate and UnitTokenFromGUID(guid) or GetUnitIdFromGUID(guid)
 		if not uid then 
-			--print("skada87 failed to grab unitID")
+			print("skada87: no unitID for "..guid)
 			return
 		end
 
@@ -452,6 +452,7 @@ Skada:RegisterModule("Enemy Damage Taken", function(L, P, _, C)
 		if
 			t.srcName and t.dstName and
 			not ignored_creatures[GetCreatureId(t.dstGUID)] and
+			not (LOCALE_ruRU and GetCreatureId(t.dstGUID) == 37799 and get_instance_diff() == "25h") and  --removing 37799 ICC25HC:LK Outside spirits from EnemyDamageTaken for ruRU locale only?
 			t.spellid and not ignored_spells[t.spellid] and
 			(not t.misstype or t.misstype == "ABSORB")
 		then

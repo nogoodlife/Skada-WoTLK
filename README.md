@@ -1,6 +1,8 @@
 What changed:   
   - ruRU locale: 
-    - fix for errors on some tooltips
+    - fixed format tooltip errors
+    - removed ICC25HC:LK 37799 Outside spirits from EnemyDamageTaken (useless damage)
+  - ICC: Sindragosa IceTombs 15%-0% damage added, [awesome_wotlk](https://github.com/someweirdhuman/awesome_wotlk) needed
   - ICC: Valkyrs overkilling finally working, [awesome_wotlk](https://github.com/someweirdhuman/awesome_wotlk) needed
     - sorry Warmane pals, your devs hate you xD
 

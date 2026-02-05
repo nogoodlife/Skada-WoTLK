@@ -121,7 +121,12 @@ local ignored_spells = {
 -- ignored creautre ids (use creature ID: [cretureID] = true)
 -- a list of creature IDs of which CLEU <<DAMAGE>> events are ignored.
 
-local ignored_creatures = {}
+local ignored_creatures = {
+	--[37799] = true,	-- ICC:LK 25HC phase3 outside spirits
+	--ruRU locale: 37799 Outside spirits and 39190 Room spirits has the same name = Skada count them as the same creature = wrong numbers in "Important targets" :(
+	--ignored_creatures removed from every module, like Enemy>EnemyDamageTaken/EnemyDamageDone, Damage>Damage, DamageTaken>DamageTaken, and we don't want this ?
+	--see workaround in Enemies.lua only for Enemy>EnemyDamageTaken on ruRU locale
+}
 
 -------------------------------------------------------------------------------
 -- misc tables
@@ -458,6 +463,8 @@ do
 		[36633] = L["Important targets"], -- Ice Sphere
 		[36701] = L["Important targets"], -- Raging Spirit
 		[39190] = L["Important targets"], -- Wicked Spirit
+		--ruRU locale: 37799 Outside spirits and 39190 Room spirits has the same name = Skada count them as the same creature = wrong numbers in "Important targets" :(
+		--can we fix this by changing creature names in ruRU tables ? no idea
 
 		-- Professor Putricide: Oozes
 		[37562] = L["Oozes"], -- Gas Cloud (Red Ooze)
@@ -493,6 +500,7 @@ do
 	-- holds units that should craete a fake unit at certain
 	-- health or power percentage.
 	-- Useful in case you want to collect stuff done to units
+		-- How it works: all damage BEFORE custom_unit start will be writed as useful in default bar for this unit
 	-- at certain encounter phases for example.
 	--
 	-- table structure (all fields are optional and will be generated and cached by the addon)
@@ -534,9 +542,14 @@ do
 			start = 0.35
 		},
 
+		-- ICC: Sindragosa Ice Tomb
+		[36980] = {
+			start = 0.15
+		},
+
 		-- ICC: The Lich King
 		[36597] = {
-			text = L["%s - Phase 3"],
+			--text = L["%s - Phase 3"], --removing text because this not really a "phase3" damage, but 40%-10% damage
 			start = 0.4,
 			stop = 0.1
 		},
@@ -545,7 +558,7 @@ do
 		[36609] = {
 			name = L["Valkyrs overkilling"],
 			start = 0.5,
-			useful = true,
+			useful = true,	-- all damage BEFORE "start = 0.5" will be writed as useful
 			diff = {["10h"] = true, ["25h"] = true}
 		},
 
