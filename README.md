@@ -1,10 +1,11 @@
 What changed:   
-  - ruRU locale: 
-    - fixed format tooltip errors
-    - removed ICC25HC:LK 37799 Outside spirits from EnemyDamageTaken (useless damage)
+  - Fixed BossFight detection for Hodir, Kel'Thuzad, Skadi the Ruthless
   - ICC: Sindragosa IceTombs 15%-0% damage added, [awesome_wotlk](https://github.com/someweirdhuman/awesome_wotlk) needed
   - ICC: Valkyrs overkilling finally working, [awesome_wotlk](https://github.com/someweirdhuman/awesome_wotlk) needed
     - sorry Warmane pals, your devs hate you xD
+  - ruRU locale: 
+    - fixed format tooltip errors
+    - removed ICC25HC:LK 37799 Outside spirits from EnemyDamageTaken (useless damage)
 
 # Skada for Wrath of the Lich King `3.3.5` (_Revisited - v1.8.87_)
 

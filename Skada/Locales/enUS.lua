@@ -882,3 +882,6 @@ L["Thorim"] = true
 L["Twin Val'kyr"] = true
 L["Valithria Dreamwalker"] = true
 L["Yogg-Saron"] = true
+L["Skadi the Ruthless"] = true
+L["Kel'Thuzad"] = true
+L["Hodir"] = true

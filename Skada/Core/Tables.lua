@@ -618,6 +618,10 @@ ns.creature_to_fight = {
 	[15930] = L["Thaddius"], -- Feugen
 	[15929] = L["Thaddius"], -- Stalagg
 	[15928] = L["Thaddius"], -- Thaddius
+	[15990] = L["Kel'Thuzad"], -- Kel'Thuzad
+	[16427] = L["Kel'Thuzad"], -- Soldier of the Frozen Wastes
+	[16429] = L["Kel'Thuzad"], -- Soul Weaver
+	[16428] = L["Kel'Thuzad"], -- Unstoppable Abomination
 
 	-- [[ Trial of the Crusader ]] --
 	[34796] = L["The Northrend Beasts"], -- Gormok
@@ -680,6 +684,14 @@ ns.creature_to_fight = {
 	[33432] = L["Mimiron"], -- Leviathan Mk II
 	[33651] = L["Mimiron"], -- VX-001
 	[33670] = L["Mimiron"], -- Aerial Command Unit
+	[32845] = L["Hodir"], -- Hodir
+	[32938] = L["Hodir"], -- Flash Freeze
+	
+	-- [[ Utgarde Pinnacle ]] --
+	[26693] = L["Skadi the Ruthless"], -- Skadi the Ruthless
+	[26690] = L["Skadi the Ruthless"], -- Ymirjar Warrior -- »мирь€рский воин
+	[26692] = L["Skadi the Ruthless"], -- Ymirjar Harpooner -- »мирь€рский гарпунщик
+	[26691] = L["Skadi the Ruthless"], -- Ymirjar Witch Doctor -- »мирь€рский знахарь
 }
 
 -------------------------------------------------------------------------------
@@ -705,6 +717,9 @@ ns.creature_to_boss = {
 	-- [[ Naxxramas ]] --
 	[15930] = 15928, -- Feugen > Thaddius
 	[15929] = 15928, -- Stalagg > Thaddius
+	[16427] = 15990, -- Soldier of the Frozen Wastes > Kel'Thuzad
+	[16429] = 15990, -- Soul Weaver > Kel'Thuzad
+	[16428] = 15990, -- Unstoppable Abomination > Kel'Thuzad
 
 	-- [[ Trial of the Crusader ]] --
 	[34796] = 34797, -- Gormok > Icehowl
@@ -722,6 +737,12 @@ ns.creature_to_boss = {
 	[33432] = 33350, -- Leviathan Mk II > Mimiron
 	[33651] = 33350, -- VX-001 > Mimiron
 	[33670] = 33350, -- Aerial Command Unit > Mimiron
+	[32938] = 32845, -- Flash Freeze > Hodir
+	
+	-- [[ Utgarde Pinnacle ]] --
+	[26690] = 26693, -- Ymirjar Warrior > Skadi the Ruthless
+	[26692] = 26693, -- Ymirjar Harpooner > Skadi the Ruthless
+	[26691] = 26693, -- Ymirjar Witch Doctor > Skadi the Ruthless
 }
 
 -- use LibBossIDs-1.0 as backup plan
