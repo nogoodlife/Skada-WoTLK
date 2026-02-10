@@ -1,13 +1,13 @@
 What changed:   
   - Fixed BossFight detection for Hodir, Kel'Thuzad, Skadi the Ruthless
   - Added Shift-LMB on segment dropdown list = set segment for all windows (by @coolsnesh)
-  - EnemyDamageTaken:
-    - Added ICC:Sindragosa IceTombs 15%-0%, [awesome_wotlk](https://github.com/someweirdhuman/awesome_wotlk) needed
-    - Fixed ICC:LK Valkyrs overkilling, [awesome_wotlk](https://github.com/someweirdhuman/awesome_wotlk) needed
+  - EnemyDamageTaken module:
+    - Added ICC:Sindragosa IceTombs 15%-0%, [awesome_wotlk](https://github.com/noname08662/awesome_wotlk) needed
+    - Fixed ICC:LK Valkyrs overkilling, [awesome_wotlk](https://github.com/noname08662/awesome_wotlk) needed
       - sorry Warmane pals, your devs hate you xD
-  - ruRU locale: 
-    - fixed format tooltip errors
-    - removed ICC25HC:LK 37799 Outside spirits from EnemyDamageTaken (useless damage)
+  - ruRU locale:
+    - Fixed tooltip format error
+    - Removed ICC25HC:LK 37799 Outside spirits from EnemyDamageTaken (useless damage)
 
 # Skada for Wrath of the Lich King `3.3.5` (_Revisited - v1.8.87_)
 
