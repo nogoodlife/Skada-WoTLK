@@ -1,6 +1,6 @@
 What changed:   
   - Fixed BossFight detection for Hodir, Kel'Thuzad, Skadi the Ruthless
-  - Added Shift-LMB on segment dropdown list = set segment for all windows (by @coolsnesh)
+  - Added Shift-LMB in segment dropdown list = set segment for all windows (by @coolsnesh)
   - EnemyDamageTaken module:
     - Added ICC:Sindragosa IceTombs 15%-0%, [awesome_wotlk](https://github.com/noname08662/awesome_wotlk) needed
     - Fixed ICC:LK Valkyrs overkilling, [awesome_wotlk](https://github.com/noname08662/awesome_wotlk) needed
@@ -8,6 +8,7 @@ What changed:
   - ruRU locale:
     - Fixed tooltip format error
     - Removed ICC25HC:LK 37799 Outside spirits from EnemyDamageTaken (useless damage)
+      - 37799 Vile Spirit (outside) and 39190 Wicked Spirit (room) has the same name in ruRU = Skada count them as the same creature = wrong numbers in "Important targets"
 
 # Skada for Wrath of the Lich King `3.3.5` (_Revisited - v1.8.87_)
 
