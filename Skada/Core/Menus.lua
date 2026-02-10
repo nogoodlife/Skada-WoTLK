@@ -389,7 +389,15 @@ function Skada:OpenMenu(window)
 				wipe(info)
 				info.text = L["Total"]
 				info.func = function()
-					self.win:SetSelectedSet("total")
+					if IsShiftKeyDown() then
+						for _, win in ipairs(windows) do
+							if win and win.SetSelectedSet then
+								win:SetSelectedSet("total")
+							end
+						end
+					else
+						self.win:SetSelectedSet("total")
+					end
 					Skada:UpdateDisplay()
 				end
 				info.checked = (self.win.selectedset == "total")
@@ -398,7 +406,15 @@ function Skada:OpenMenu(window)
 				wipe(info)
 				info.text = L["Current"]
 				info.func = function()
-					self.win:SetSelectedSet("current")
+					if IsShiftKeyDown() then
+						for _, win in ipairs(windows) do
+							if win and win.SetSelectedSet then
+								win:SetSelectedSet("current")
+							end
+						end
+					else
+						self.win:SetSelectedSet("current")
+					end
 					Skada:UpdateDisplay()
 				end
 				info.checked = (self.win.selectedset == "current")
@@ -417,7 +433,15 @@ function Skada:OpenMenu(window)
 						wipe(info)
 						info.text = set_info_text(set, i, num)
 						info.func = function()
-							self.win:SetSelectedSet(i)
+							if IsShiftKeyDown() then
+								for _, win in ipairs(windows) do
+									if win and win.SetSelectedSet then
+										win:SetSelectedSet(i)
+									end
+								end
+							else
+								self.win:SetSelectedSet(i)
+							end
 							Skada:UpdateDisplay()
 						end
 						info.checked = (self.win.selectedset == i)
@@ -652,19 +676,37 @@ function Skada:SegmentMenu(window)
 		local numsets = #sets
 
 		if level == 1 then
+			-- Total segment with Shift support
 			wipe(info)
 			info.text = L["Total"]
 			info.func = function()
-				self.win:SetSelectedSet("total")
+				if IsShiftKeyDown() then
+					for _, win in ipairs(windows) do
+						if win and win.SetSelectedSet then
+							win:SetSelectedSet("total")
+						end
+					end
+				else
+					self.win:SetSelectedSet("total")
+				end
 				Skada:UpdateDisplay()
 			end
 			info.checked = (self.win.selectedset == "total")
 			UIDropDownMenu_AddButton(info, level)
 
+			-- Current segment with Shift support
 			wipe(info)
 			info.text = L["Current"]
 			info.func = function()
-				self.win:SetSelectedSet("current")
+				if IsShiftKeyDown() then
+					for _, win in ipairs(windows) do
+						if win and win.SetSelectedSet then
+							win:SetSelectedSet("current")
+						end
+					end
+				else
+					self.win:SetSelectedSet("current")
+				end
 				Skada:UpdateDisplay()
 			end
 			info.checked = (self.win.selectedset == "current")
@@ -688,7 +730,15 @@ function Skada:SegmentMenu(window)
 					wipe(info)
 					info.text = set_info_text(set, i, numsets)
 					info.func = function()
-						self.win:SetSelectedSet(i)
+						if IsShiftKeyDown() then
+							for _, win in ipairs(windows) do
+								if win and win.SetSelectedSet then
+									win:SetSelectedSet(i)
+								end
+							end
+						else
+							self.win:SetSelectedSet(i)
+						end
 						Skada:UpdateDisplay()
 					end
 					info.checked = (self.win.selectedset == i)
@@ -729,7 +779,15 @@ function Skada:SegmentMenu(window)
 					wipe(info)
 					info.text = set_info_text(set, i, numsets)
 					info.func = function()
-						self.win:SetSelectedSet(i)
+						if IsShiftKeyDown() then
+							for _, win in ipairs(windows) do
+								if win and win.SetSelectedSet then
+									win:SetSelectedSet(i)
+								end
+							end
+						else
+							self.win:SetSelectedSet(i)
+						end
 						Skada:UpdateDisplay()
 					end
 					info.checked = (self.win.selectedset == i)
