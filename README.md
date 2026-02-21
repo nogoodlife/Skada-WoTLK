@@ -1,14 +1,24 @@
-What changed:   
-  - Fixed BossFight detection for Hodir, Kel'Thuzad, Skadi the Ruthless
-  - Added Shift-LMB in segment dropdown list = set segment for all windows (by @coolsnesh)
-  - EnemyDamageTaken module:
-    - Added ICC:Sindragosa IceTombs 15%-0%, [awesome_wotlk](https://github.com/noname08662/awesome_wotlk) needed
-    - Fixed ICC:LK Valkyrs overkilling, [awesome_wotlk](https://github.com/noname08662/awesome_wotlk) needed
-      - sorry Warmane pals, your devs hate you xD
-  - ruRU locale:
-    - Fixed tooltip format error
-    - Removed ICC25HC:LK 37799 Outside spirits from EnemyDamageTaken (useless damage)
-      - 37799 Vile Spirit (outside) and 39190 Wicked Spirit (room) has the same name in ruRU = Skada count them as the same creature = wrong numbers in "Important targets"
+### What changed:
+- Fixed BossFight detection for Hodir, Kel'Thuzad, Skadi the Ruthless
+- Added Shift-LMB in segment dropdown list = set segment for all windows (by @coolsnesh)
+- EnemyDamageTaken module:
+  - Added ICC:Sindragosa IceTombs 15%-0%
+  - Fixed ICC:LK Valkyrs overkilling. For real now. For [EVERYONE](https://youtu.be/74BzSTQCl_c?si=gkOn5NKk9-K5zcsu&t=10).
+- ruRU locale:
+  - Fixed tooltip format error
+  - Removed ICC25HC:LK 37799 Outside spirits from EnemyDamageTaken (useless damage)
+    - 37799 Vile Spirit (outside) and 39190 Wicked Spirit (room) has the same name in ruRU = Skada count them as the same creature = wrong numbers in "Important targets"
+
+> [!NOTE]
+**2026.02.21 About Enemy Damage Taken module**  
+Now you can manually add maxHP/maxPower `values` in `Core/Tables.lua` to ensure your `custom_units` (like *Valkyrs overkilling*) will work even if automatic functions failed to grab this values.  
+Thats not optimal, because some custom servers may have different databases with different hp/power values, but seems like its really needed as a final layer, so everything will work properly =_=
+
+### Known issues:
+- sometimes auras, that still active on bossfight end - stored with wrong duration
+  - if someone knows how to fix this - please send elp xD
+
+#
 
 # Skada for Wrath of the Lich King `3.3.5` (_Revisited - v1.8.87_)
 

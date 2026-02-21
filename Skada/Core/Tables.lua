@@ -465,6 +465,7 @@ do
 		[39190] = L["Important targets"], -- Wicked Spirit
 		--ruRU locale: 37799 Outside spirits and 39190 Room spirits has the same name = Skada count them as the same creature = wrong numbers in "Important targets" :(
 		--can we fix this by changing creature names in ruRU tables ? no idea
+		--can we fix it with adding 37799 as overkill damage in custom_units ? kind of, but it still writes 1rst hit as usefull damage, and I'm too scared to even look the fking why is that happening xD
 
 		-- Professor Putricide: Oozes
 		[37562] = L["Oozes"], -- Gas Cloud (Red Ooze)
@@ -517,9 +518,10 @@ do
 	--
 	-- 	name: 		name of the fake unit (optional)
 	-- 	text: 		text to use *format()* with (optional)
-	-- 	values: 	table of difficulties to max health (optional)
-	-- 	diff: 		table of whitelisted difficulties (optional, default: all)
+	-- 	diff: 		table of whitelisted difficulties (optional, default: all) -- 10n, 10h, 25n, 25h
 	--		{["10h"] = true, ["25h"] = true}
+	-- 	values: 	table of difficulties to max health/power (optional)
+	--		{["10h"] = 1417500, ["25h"] = 2992500}
 	--
 	-- **optional** fields will be generated and cached by the addon.
 	--
@@ -544,7 +546,8 @@ do
 
 		-- ICC: Sindragosa Ice Tomb
 		[36980] = {
-			start = 0.15
+			start = 0.15,
+			values = {["10n"] = 113400, ["25n"] = 113400, ["10h"] = 453600, ["25h"] = 453600}	-- if your server has different maxHP values... change this manually
 		},
 
 		-- ICC: The Lich King
@@ -559,7 +562,8 @@ do
 			name = L["Valkyrs overkilling"],
 			start = 0.5,
 			useful = true,	-- all damage BEFORE "start = 0.5" will be writed as useful
-			diff = {["10h"] = true, ["25h"] = true}
+			diff = {["10h"] = true, ["25h"] = true},
+			values = {["10h"] = 1417500, ["25h"] = 2992500}	-- if your server has different maxHP values... change this manually
 		},
 
 		-- ToC: Anub'arak

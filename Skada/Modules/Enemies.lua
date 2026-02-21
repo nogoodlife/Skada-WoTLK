@@ -86,10 +86,16 @@ Skada:RegisterModule("Enemy Damage Taken", function(L, P, _, C)
 
 			-- try to grab UnitID
 			local uid = C_NamePlate and UnitTokenFromGUID(guid) or GetUnitIdFromGUID(guid)
-			if not uid then return end
-
-			local maxval = UnitPowerMax(uid, unit.power)
-			if not maxval then return end
+			local maxval
+			
+			if uid then
+				maxval = UnitPowerMax(uid, unit.power)
+			elseif not maxval and unit.values and unit.values[diff] then
+				maxval = unit.values[diff]
+			else
+				print("Skada87: something went wrong FOR LITERALLY NO REASON!")
+				return
+			end
 
 			max_power = max_power or {}
 			max_power[creatureId] = max_power[creatureId] or {}
@@ -106,13 +112,16 @@ Skada:RegisterModule("Enemy Damage Taken", function(L, P, _, C)
 
 		-- try to grab UnitID
 		local uid = C_NamePlate and UnitTokenFromGUID(guid) or GetUnitIdFromGUID(guid)
-		if not uid then 
-			print("skada87: no unitID for "..guid)
+		local maxval
+
+		if uid then
+			maxval = UnitHealthMax(uid)
+		elseif not maxval and unit.values and unit.values[diff] then
+			maxval = unit.values[diff]
+		else
+			print("Skada87: something went wrong FOR LITERALLY NO REASON!")
 			return
 		end
-
-		local maxval = UnitHealthMax(uid)
-		if not maxval then return end
 
 		max_health = max_health or {}
 		max_health[creatureId] = max_health[creatureId] or {}
