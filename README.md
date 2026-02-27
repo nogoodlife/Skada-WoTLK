@@ -1,3 +1,5 @@
+[Download](https://github.com/nogoodlife/Skada-WoTLK/archive/refs/heads/main.zip)
+
 ### What changed:
 - Fixed BossFight detection for Hodir, Kel'Thuzad, Skadi the Ruthless
 - Added Shift-LMB in segment dropdown list = set segment for all windows (by @coolsnesh)
