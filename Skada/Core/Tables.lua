@@ -463,9 +463,14 @@ do
 		[36633] = L["Important targets"], -- Ice Sphere
 		[36701] = L["Important targets"], -- Raging Spirit
 		[39190] = L["Important targets"], -- Wicked Spirit
-		--ruRU locale: 37799 Outside spirits and 39190 Room spirits has the same name = Skada count them as the same creature = wrong numbers in "Important targets" :(
-		--can we fix this by changing creature names in ruRU tables ? no idea
-		--can we fix it with adding 37799 as overkill damage in custom_units ? kind of, but it still writes 1rst hit as usefull damage, and I'm too scared to even look the fking why is that happening xD
+		--[[ruRU locale, ICC 25 HC: The Lich King fight
+			37799 Outside spirits and 39190 Room spirits has the same name = Skada count them as the same creature = wrong numbers in "Important targets" :(
+			NPC localization can be fixed only serverside.
+			
+			If 37799 and 39190 spirits has the same name on your server,
+			you can remove 37799 for Enemy Damage Taken module only:
+			just delete "--" at line #464 in `Skada\Modules\Enemies.lua`
+		]]
 
 		-- Professor Putricide: Oozes
 		[37562] = L["Oozes"], -- Gas Cloud (Red Ooze)

@@ -8,17 +8,21 @@
   - Fixed ICC:LK Valkyrs overkilling. For real now. For [EVERYONE](https://youtu.be/74BzSTQCl_c?si=gkOn5NKk9-K5zcsu&t=10).
 - ruRU locale:
   - Fixed tooltip format error
-  - Removed ICC25HC:LK 37799 Outside spirits from EnemyDamageTaken (useless damage)
-    - 37799 Vile Spirit (outside) and 39190 Wicked Spirit (room) has the same name in ruRU = Skada count them as the same creature = wrong numbers in "Important targets"
-
-> [!NOTE]
-**2026.02.21 About Enemy Damage Taken module**  
-Now you can manually add maxHP/maxPower `values` in `Core/Tables.lua` to ensure your `custom_units` (like *Valkyrs overkilling*) will work even if automatic functions failed to grab this values.  
-Thats not optimal, because some custom servers may have different databases with different hp/power values, but seems like its really needed as a final layer, so everything will work properly =_=
 
 ### Known issues:
 - sometimes auras, that still active on bossfight end - stored with wrong duration
   - if someone knows how to fix this - please send elp xD
+- ruRU locale, ICC 25 HC: The Lich King fight
+  - 37799 Outside spirits and 39190 Room spirits has the same name = Skada count them as the same creature = wrong numbers in "Important targets" :(
+  - If 37799 and 39190 spirits has the same names on your server,
+			you can remove 37799 from Enemy Damage Taken module:
+  - just delete "--" at line #464 in `Skada\Modules\Enemies.lua`
+    - NPC localization can be fixed only serverside, so ask your devs to update localized name for npc 37799
+
+> [!NOTE]
+**About Enemy Damage Taken module**  
+Now you can manually add maxHP/maxPower `values` in `Core/Tables.lua` to ensure your `custom_units` (like *Valkyrs overkilling*) will work even if automatic functions failed to grab this values.  
+Thats not optimal, because some custom servers may have different databases with different hp/power values, but seems like its really needed as a final layer, so everything will work properly =_=
 
 #
 
