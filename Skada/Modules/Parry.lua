@@ -9,6 +9,7 @@ Skada:RegisterModule("Parry-Haste", function(L, P, _, _, M, O)
 
 	local parrybosses = {
 		[10184] = true, -- Onyxia
+		[16011] = true, -- Loatheb (https://forum.wowcircle.com/showthread.php?t=1370320)
 		[34797] = true, -- Icehowl
 		[34799] = true, -- Dreadscale
 		[35144] = true, -- Acidmaw
