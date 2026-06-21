@@ -5,7 +5,11 @@
 - Added Shift-LMB in segment dropdown list = set segment for all windows (by @coolsnesh)
 - EnemyDamageTaken module:
   - Added ICC:Sindragosa IceTombs 15%-0%
-  - Fixed ICC:LK Valkyrs overkilling. For real now. For [EVERYONE](https://youtu.be/74BzSTQCl_c?si=gkOn5NKk9-K5zcsu&t=10).
+  - Fixed ICC:LK Valkyrs overkilling. For real now. For [EVERYONE](https://youtu.be/74BzSTQCl_c?si=gkOn5NKk9-K5zcsu&t=10)
+- Parry-haste module:
+  - Added Lothaeb (Naxx)
+- Absorbs module:
+  - Fixed ZoneModifiers depending on ICC buff
 - ruRU locale:
   - Fixed tooltip format error
 
