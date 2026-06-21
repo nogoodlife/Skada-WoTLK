@@ -1102,16 +1102,37 @@ Skada:RegisterModule("Absorbs", function(L, P, G)
 		Skada.UnregisterAllMessages(self)
 		Skada:RemoveMode(self)
 	end
-
+	
+	local iccBuffModifier = {
+		-- Hellscream's Warsong
+		[73816] = "1.05",	[73818] = "1.1",	[73819] = "1.15",
+		[73820] = "1.2",	[73821] = "1.25",	[73822] = "1.3",
+		-- Strength of Wrynn
+		[73762] = "1.05",	[73824] = "1.1",	[73825] = "1.15",
+		[73826] = "1.2",	[73827] = "1.25",	[73828] = "1.3",
+	}
+	
+	local iccWrynnName = spellnames[73828]
+	local iccHellscreamName = spellnames[73822]
+	
 	function mode:ZoneModifier()
-		if UnitInBattleground("player") or GetCurrentMapAreaID() == 502 then
+		if UnitInBattleground("player") then
 			zoneModifier = 1.17
 		elseif IsActiveBattlefieldArena() then
 			zoneModifier = 0.9
-		elseif GetCurrentMapAreaID() == 605 then
-			zoneModifier = (UnitBuff("player", spellnames[73822]) or UnitBuff("player", spellnames[73828])) and 1.3 or 1
 		else
-			zoneModifier = 1
+			local mapID = GetCurrentMapAreaID()
+			if mapID == 502 then
+				zoneModifier = 1.17
+			elseif mapID == 605 then
+				local _, _, _, _, _, _, _, _, _, _, ICCspellID = UnitBuff("player", iccWrynnName)
+				if not ICCspellID then
+					_, _, _, _, _, _, _, _, _, _, ICCspellID = UnitBuff("player", iccHellscreamName)
+				end
+				zoneModifier = ICCspellID and iccBuffModifier[ICCspellID] or 1
+			else
+				zoneModifier = 1
+			end
 		end
 	end
 
